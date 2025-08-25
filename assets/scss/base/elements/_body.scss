@@ -1,0 +1,38 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: $font__main;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	background-color: $color__dark;
+	box-sizing: border-box;
+}
+html {
+	scroll-behavior: smooth;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+h1, h2, h3, h4, h5, h6, li, p {
+    font-weight: 400;
+}
+
+
+.site {
+	position: relative;
+}
+
+
+@media (min-width:1024px) {
+	::-webkit-scrollbar {
+		display: none;
+	}
+}

@@ -1,0 +1,125 @@
+.navbar {
+    padding: 30px 0;
+    width: 100%;
+    z-index: 2;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 1350px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 45px;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style-type: none;
+        }
+    }
+
+    .nav-content {
+        width: 100%;
+    }
+
+    .menu-item {
+
+        a {
+            font-family: "Nunito";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            color: $color__pink;
+            text-align: center;
+            line-height: normal;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline dotted;
+
+            }
+        }
+
+
+        &--brand {
+            position: relative;
+
+            a {
+                font-family: "Anonymous Pro";
+                font-size: 25px;
+                color: $color__light;
+                font-weight: 700;
+                letter-spacing: 2.5px;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto auto auto -26px;
+                width: 1rem;
+                height: 1rem;
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M15.9323 4.64493L14.0031 8.3457C13.8768 8.5879 13.8751 8.88345 14.0091 9.12334L15.9773 12.8083C16.3009 13.4232 15.7863 14.1428 15.0957 14.0291L10.9611 13.3458C10.6857 13.3056 10.4106 13.3906 10.215 13.5893L7.30308 16.5928C6.81923 17.0931 5.97106 16.8236 5.87102 16.1402L5.24934 12.0165C5.20958 11.7449 5.03163 11.5114 4.78862 11.3859L1.01789 9.56662C0.389643 9.26486 0.385829 8.37951 1.01355 8.06391L4.76482 6.19035C5.0159 6.0641 5.17994 5.83427 5.22064 5.55986L5.80214 1.43C5.89948 0.744611 6.74731 0.459417 7.23405 0.960863L10.1758 3.93063C10.3662 4.12647 10.6494 4.21924 10.9208 4.17056L15.0463 3.44132C15.7286 3.31458 16.2549 4.025 15.9323 4.64493Z" fill="%23000FFF"/></svg>');
+                background-position: center;
+                @include transition(.5s);
+            }
+
+            &:hover::before {
+                -moz-transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+
+            
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .navbar {
+
+        &__menu {
+            align-items: center;
+            flex-direction: column;
+
+            li:nth-child(1) {
+                order: 1;
+            }
+            li:nth-child(3) {
+                display: none;
+            }
+        }
+
+        .menu-item {
+
+            &--brand {
+                left: 1rem;
+            }
+        }
+    }
+}

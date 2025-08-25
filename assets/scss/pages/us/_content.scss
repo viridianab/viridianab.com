@@ -1,0 +1,53 @@
+.me {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: $color__dark;
+
+    .container {
+        padding: 0 20px;
+        max-width: 585px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    img {
+        display: block;
+        margin: 170px auto 30px;
+    }
+
+    h1 {
+        color: $color__blue;
+        text-align: center;
+        font-family: "Anonymous Pro";
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 8.75px;
+        text-transform: uppercase;
+        margin: 0 auto 10px;
+    }
+    p {
+        color: $color__light;
+        text-align: center;
+        font-family: Nunito;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin: 0 auto 10px;
+        
+        a {
+            color: $color__light;
+
+            &:hover {
+                color: $color__pink;
+                text-decoration: underline dashed;
+            }
+        }
+    }
+}

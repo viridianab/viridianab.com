@@ -1,0 +1,264 @@
+.projects {
+    position: relative;
+    display: flex;
+    width: 100%;
+    background-color: $color__dark;
+
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        height: 100%;
+        width: 100%;
+        max-width: 1350px;
+        margin: 0 auto;
+        
+        .columns {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: start;
+            margin: 0 auto;
+            
+            .column {
+                flex: 0 0 auto;
+                float: left;
+                width: 500px;
+                height: 500px;
+
+                &:not(:last-child) {
+                    margin-right: 25px;
+                }
+            }
+
+        }
+    }
+
+    .project {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        @include transition(.5s);
+
+        &-data {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin: auto 0 0 0;
+            width: 100%;
+            z-index: 3;
+            opacity: 0;
+            @include transition(.35s);
+
+            &--tags {
+                display: flex;
+                padding: 0;
+                margin: 0 0 15px 20px;
+
+                li {
+                    font-family: "Nunito";
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    color: $color__light;
+                    line-height: normal;
+                    list-style-type: none;
+                    border: 1px solid $color__light;
+                    border-radius: 25px;
+                    padding: 5px 20px;
+
+                    &:not(:last-child) {
+                        margin-right: 15px;
+                    }
+                }
+            }
+
+            &--name {
+                display: flex;
+                justify-content: space-between;
+                background-color: $color__dark;
+                padding: 20px 20px;
+                width: 100%;
+
+                p {
+                    color: $color__light;
+                    font-family: "Anonymous Pro";
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        &-img {
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+            &--hover {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: $color__black;
+                opacity: 0;
+                z-index: 2;
+            }
+
+            img {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                @include transition(.35s);
+            }
+
+            &--bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: 0;
+            }
+        }
+
+
+        &:hover {
+            border-radius: 0;
+
+            .project-img {
+                &--hover {
+                    opacity: .5;
+                }
+                img {
+                    transform: scale(1.1);
+                }
+            }
+
+            .project-data {
+                opacity: 1;
+            }
+        }
+
+        &--style {
+            &-1 {
+                background-color: #DFE9FB;
+            }
+            &-2 {
+                background-color: #4A4D56;
+            }
+            &-3 {
+                background-color: #4364A4;
+                background: radial-gradient(40.87% 40.6% at 50% 50%, #151842 0%, #4364A4 100%);
+            }
+            &-4 {
+                background-color: #EEE2D8;
+            }
+            &-5 {
+                background-color: #9B89E5;
+            }
+            &-6 {
+                background-color: #B946FF;
+
+                .project-img--bg {
+                    background-image: url('assets/img/projects/project__img-6--bg.png');
+                    background-position: center;
+                }
+            }
+            &-7 {
+                background-color: $color__blue;
+            }
+            &-8 {
+                background-color: $color__pink;
+
+                .project-data {
+                    height: 100%;
+                    opacity: 1;
+
+                    &--name {
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        background-color: transparent;
+
+                        a {
+                            text-align: center;
+                            font-family: "Anonymous Pro";
+                            font-size: 25px;
+                            font-style: normal;
+                            font-weight: 700;
+                            color: $color__light;
+                            line-height: normal;
+                            letter-spacing: 2.5px;
+                            text-transform: uppercase;
+                            text-decoration: none;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width:1024px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    .projects {
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+}
+
+@media (max-width:1023px) {
+    .projects {
+        height: auto;
+
+        .container {
+            padding: 0 20px;
+            .columns {
+                flex-direction: column;
+                width: 100%;
+
+                .column {
+                    float: none;
+                    width: 100%;
+                    height: 70vw;
+
+                    &:not(:last-child) {
+                        margin: 0 0 25px;
+                    }
+
+                    &:last-child {
+                        height: 100px;
+                    }
+                }
+            }
+        }
+
+        .project {
+            display: block;
+
+            img {
+                object-fit: cover;
+            }
+
+            &-data--tags {
+                flex-wrap: wrap;
+                gap: 15px 0;
+            }
+        }
+    }
+}
